@@ -1,0 +1,42 @@
+project:
+  groups:
+    - group: Source Files
+      files:
+        - file: ./main.cpp
+      language-CPP: c++20
+      define:
+        - FC_HAVE_NOTHROW
+      groups:
+        - group: fc14audiodecoder
+          add-path: 
+            - fc14audiodecoder/
+          files:
+            - file: fc14audiodecoder/FC.cpp
+            - file: fc14audiodecoder/FC_Data.cpp
+            - file: fc14audiodecoder/LamePaulaMixer.cpp
+            - file: fc14audiodecoder/LamePaulaVoice.cpp
+            - file: fc14audiodecoder/Paula.cpp
+  components:
+    - component: ARM::CMSIS:CORE
+    - component: Device:Startup
+  output:
+    type:
+      - elf
+      - hex
+      - map
+  compiler: AC6@6.24.0
+  misc:
+    - Link:
+      - --callgraph
+      - --callgraph_file="callgraph.txt"
+      - --callgraph_output=text
+      - --map
+      - --verbose
+      - --info=sizes
+      - --info=totals
+      - --info=unused
+      - --info=stack
+      - --info=inline
+      - --list="linker.txt"
+    - CPP:
+      - -fno-exceptions
