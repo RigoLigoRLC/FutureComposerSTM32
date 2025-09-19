@@ -1,7 +1,9 @@
 
 # Future Composer Player on STM32
 
-This is a Future Composer 1.4 player ported to STM32. The sole purpose of this project is to play the tune of Keil uVision keygen by EDGE team.
+This is a Future Composer 1.4 player ported to STM32. The sole purpose of this project is to play the tune of Keil uVision keygen*.
+
+\* The original music is from [I.C.E 2 of Cytax](https://whdload.de/mags/Cytax_ICE02.html).
 
 # Building
 
